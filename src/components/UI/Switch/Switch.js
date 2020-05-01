@@ -1,17 +1,19 @@
 import React from "react";
-import classes from "./ChartSwitch.module.scss";
+import classes from "./Switch.module.scss";
 
-const ChartSwitch = (props) => {
-  const { switches, switchIndex, setSwitchIndex, activeColor } = props;
+const Switch = (props) => {
+  const { switches, switchIndex, setSwitchIndex, activeColor, type } = props;
   return (
     <div
-      className={classes.ChartSwitchContainer}
+      className={`${classes.SwitchContainer} ${
+        type === "result" ? classes.ResultSwitch : null
+      } ${type === "chart" ? classes.ChartSwitch : null}`}
       style={{
         gridTemplateColumns: `repeat(${switches.length}, 1fr)`,
       }}
     >
       <div
-        className={classes.ChartTypeActive}
+        className={classes.SwitchTypeActive}
         style={{
           width: `calc(100%/${switches.length})`,
           transform: `translateX(${switchIndex * 100}%)`,
@@ -31,7 +33,12 @@ const ChartSwitch = (props) => {
         >
           {switchEl.icon ? (
             <div className={classes.IconContainer}>
-              {index === switchIndex ? switchEl.whiteIcon : switchEl.icon}
+              {React.cloneElement(switchEl.icon, {
+                style: { opacity: index === switchIndex ? 0 : 1 },
+              })}
+              {React.cloneElement(switchEl.whiteIcon, {
+                style: { opacity: index === switchIndex ? 1 : 0 },
+              })}
             </div>
           ) : (
             switchEl
@@ -42,4 +49,4 @@ const ChartSwitch = (props) => {
   );
 };
 
-export default ChartSwitch;
+export default Switch;

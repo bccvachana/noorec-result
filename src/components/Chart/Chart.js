@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
 import classes from "./Chart.module.scss";
 import withDeviceDetect from "../../hoc/withDeviceDetect";
+import Switch from "../UI/Switch/Switch";
 
 import BarChart from "./BarChart/BarChart";
 import LineChart from "./LineChart/LineChart";
 import ChartScroll from "./ChartScroll/ChartScroll";
-import ChartSwitch from "./ChartSwitch/ChartSwitch";
 
 import BarIcon from "../../assets/Chart/Bar.svg";
 import BarIconWhite from "../../assets/Chart/BarWhite.svg";
@@ -51,14 +51,15 @@ const Chart = (props) => {
         }}
       >
         {switches.length > 1 ? (
-          <ChartSwitch
+          <Switch
             switches={[...switches]}
             switchIndex={dataIndex}
             setSwitchIndex={setDataIndex}
             activeColor="#fa5458"
+            type="chart"
           />
         ) : null}
-        <ChartSwitch
+        <Switch
           switches={[
             {
               icon: <img src={BarIcon} alt="BarIcon" />,
@@ -72,6 +73,7 @@ const Chart = (props) => {
           switchIndex={chartType}
           setSwitchIndex={setChartType}
           activeColor="#feb562"
+          type="chart"
         />
       </div>
       <div

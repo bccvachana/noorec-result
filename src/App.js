@@ -17,6 +17,8 @@ import BloodPressureChart from "./pages/ChartPage/BloodPressureChart";
 import RateChart from "./pages/ChartPage/RateChart";
 import OxygenChart from "./pages/ChartPage/OxygenChart";
 
+import WeightHeight from "./pages/WeightHeight/WeightHeight";
+
 defaults.global.defaultFontFamily = "Prompt";
 defaults.global.defaultFontColor = "white";
 
@@ -106,7 +108,7 @@ class App extends Component {
           />
         </div>
         <div>
-          <WeightHeightChart index={this.state.index} pageIndex={2} />
+          <WeightHeight index={this.state.index} pageIndex={2} />
         </div>
         <div>
           <WeightHeightCriteria

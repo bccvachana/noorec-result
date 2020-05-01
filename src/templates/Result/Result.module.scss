@@ -4,8 +4,9 @@
   width: 100%;
   max-width: 640px;
   margin-bottom: 18px;
-  text-align: left;
+  @include flex(row);
   @include font-h2($bold);
+  justify-content: space-between;
 
   @include tablet-desktop {
     @include font-h1($bold);

@@ -11,7 +11,7 @@ const WeightHeightCriteria = (props) => {
   const bmiConst = (height * height) / 10000;
 
   const { index, pageIndex, isFromTop } = props;
-  const criteria = "obase";
+  const criteria = "extremeObase";
   const { title, detail, bar } = weightHeightStatic[criteria];
 
   const [swiper, setSwiper] = useState(null);
