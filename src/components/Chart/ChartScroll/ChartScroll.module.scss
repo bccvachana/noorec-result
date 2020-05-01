@@ -1,0 +1,44 @@
+@import "../../../var";
+
+.ScrollLineContainer {
+  height: 10px;
+  position: relative;
+  @include flex(row);
+  margin-bottom: 5px;
+}
+
+.ScrollLine {
+  background-color: #dedede;
+  border-radius: $radius;
+  height: 100%;
+  width: 100%;
+  margin: 0 5px;
+}
+
+.Scroll {
+  position: absolute;
+  background: url("../../../assets/Chart/Scroll.svg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-color: $color-accent1;
+  background-size: auto 55%;
+  border-radius: 20px;
+  color: white;
+  cursor: pointer;
+  width: 50px;
+  height: 20px;
+  left: calc(100% - 50px);
+  animation: Scroll 1.5s ease-in-out 1;
+  @include font-body(600);
+  @include shadow1;
+}
+
+@keyframes Scroll {
+  0% {
+    left: 0,
+  }
+
+  100% {
+    left: calc(100% - 50px);
+  }
+}

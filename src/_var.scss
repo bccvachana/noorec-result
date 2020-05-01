@@ -1,0 +1,77 @@
+$color-primary: white;
+$color-accent1: #fa5458;
+$color-accent2: #feb562;
+$color-text: #3b4251;
+$color-detail: #b1b3b9;
+
+$radius: 15px;
+
+@mixin mobile {
+  @media only screen and (max-width:767px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media only screen and (min-width: 768px) and (max-width: 1023px) and (min-height: 605px) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media only screen and (min-width: 1024px) and (min-height: 605px) {
+    @content;
+  }
+}
+
+@mixin tablet-desktop {
+  @media only screen and (min-width: 768px) and (min-height: 605px) {
+    @content;
+  }
+}
+
+@mixin flex($direction) {
+  display: -webkit-box;
+  /* OLD - iOS 6-, Safari 3.1-6, BB7 */
+  display: -ms-flexbox;
+  /* TWEENER - IE 10 */
+  display: -webkit-flex;
+  /* NEW - Safari 6.1+. iOS 7.1+, BB10 */
+  display: flex;
+  /* NEW, Spec - Firefox, Chrome, Opera */
+  justify-content: center;
+  align-items: center;
+  flex-direction: $direction;
+}
+
+$bold : 600;
+$medium : 400;
+
+@mixin font-small($weight) {
+  font-size: 10.5px;
+  font-weight: $weight;
+}
+
+@mixin font-body($weight) {
+  font-size: 14px;
+  font-weight: $weight;
+}
+
+@mixin font-h2($weight) {
+  font-size: 21px;
+  font-weight: $weight;
+}
+
+@mixin font-h1($weight) {
+  font-size: 28px;
+  font-weight: $weight;
+}
+
+@mixin font-h0($weight) {
+  font-size: 35px;
+  font-weight: $weight;
+}
+
+@mixin shadow1 {
+  box-shadow: 0 0 8px 3px rgba(0, 0, 0, 0.05);
+}

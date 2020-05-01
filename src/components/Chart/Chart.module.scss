@@ -1,0 +1,39 @@
+@import "../../var";
+
+.Chart {
+  width: 100%;
+  flex-grow: 1;
+  @include flex(column);
+}
+
+.ChartControl {
+  width: 100%;
+  @include flex(row);
+}
+
+.ChartContainer {
+  width: 100%;
+  overflow: hidden;
+  @include flex(column);
+  position: relative;
+  flex-grow: 1;
+}
+
+.BarContainer {
+  flex-grow: 1;
+  position: relative;
+}
+
+.LineContainerOutside {
+  background-color: #fafafa;
+  position: absolute;
+  height: 100%;
+  @include flex(column);
+  transition: all 0.3s ease-in-out,
+}
+
+.LineContainerInside {
+  flex-grow: 1;
+  width: 100%;
+  position: relative;
+}

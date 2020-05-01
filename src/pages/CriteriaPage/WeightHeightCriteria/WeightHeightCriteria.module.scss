@@ -1,0 +1,104 @@
+@import "../../../var";
+
+.ColorBarContainer {
+  margin-top: 20px;
+  width: 100%;
+  max-width: 340px;
+
+  >div {
+    @include flex(row);
+    width: 100%;
+  }
+}
+
+.ColorBarWeightLabel {
+  @include font-small(500);
+  padding-bottom: 6px;
+
+  @include tablet-desktop {
+    @include font-body(500);
+  }
+
+  >div {
+    width: 20%;
+  }
+}
+
+.ColorBar {
+  height: 10px;
+  position: relative;
+
+  >div {
+    width: 20%;
+    height: 100%;
+  }
+
+  >div:nth-child(1) {
+    background-color: #FEBB6B;
+    border-bottom-left-radius: 50px;
+    border-top-left-radius: 50px;
+  }
+
+  >div:nth-child(2) {
+    background-color: #FEA065;
+  }
+
+  >div:nth-child(3) {
+    background-color: #FD7D56;
+  }
+
+  >div:nth-child(4) {
+    background-color: #FD5A48;
+  }
+
+  >div:nth-child(5) {
+    background-color: #FC3839;
+    border-bottom-right-radius: 50px;
+    border-top-right-radius: 50px;
+  }
+
+  .Circle {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    border-radius: 20px;
+    @include shadow1;
+    background-color: white;
+    border: 3px solid;
+    border-color: #b20204;
+  }
+}
+
+.ColorBarDetail {
+  padding-top: 6px;
+  @include font-small(500);
+
+  @include tablet-desktop {
+    @include font-body(500);
+  }
+
+  >div {
+    width: 20%;
+    height: 100%;
+  }
+
+  >div:nth-child(1) {
+    color: #FEBB6B;
+  }
+
+  >div:nth-child(2) {
+    color: #FEA065;
+  }
+
+  >div:nth-child(3) {
+    color: #FD7D56;
+  }
+
+  >div:nth-child(4) {
+    color: #FD5A48;
+  }
+
+  >div:nth-child(5) {
+    color: #FC3839;
+  }
+}

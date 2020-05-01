@@ -1,0 +1,48 @@
+@import "../../var";
+
+.InfoContainer {
+  width: 100%;
+  @include flex(column);
+}
+
+.Row {
+  width: 100%;
+  max-width: 480px;
+  @include flex(row);
+
+  .RowSpace {
+    flex-grow: 1;
+    max-width: 15px;
+
+    @include tablet-desktop {
+      max-width: 25px;
+    }
+  }
+
+  .RowSpaceCriteria {
+    width: 5px;
+  }
+
+  .BpRowSpace {
+    flex-grow: 1;
+    max-width: 30px;
+
+    @include tablet-desktop {
+      max-width: 35px;
+    }
+  }
+}
+
+.Bmi {
+  @include tablet-desktop {
+    margin-top: 10px;
+  }
+}
+
+.BloodPressure {
+  margin: 10px 0 10px;
+
+  @include tablet-desktop {
+    margin-top: 10px;
+  }
+}

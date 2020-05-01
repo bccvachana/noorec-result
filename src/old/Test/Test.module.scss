@@ -1,0 +1,116 @@
+@import "../../var";
+
+.ScrollLine {
+  width: 350px;
+  height: 10px;
+  background-color: blue;
+  position: relative;
+  @include flex(row);
+  justify-content: flex-start;
+}
+
+.Scroll {
+  position: absolute;
+  width: 50px;
+  background-color: chartreuse;
+  cursor: pointer;
+  animation: left 1.5s ease-in-out 1 forwards;
+}
+
+@keyframes left {
+  0% {
+    left: 25px;
+  }
+
+  100% {
+    left: 275px;
+  }
+}
+
+.ChartContainer {
+  position: relative;
+  width: 300px;
+  height: 200px;
+  border: solid 5px red;
+  margin-bottom: 10px;
+  overflow: hidden;
+  perspective: 500px;
+}
+
+.Chart {
+  position: absolute;
+  height: 500px;
+  width: 600px;
+  background: linear-gradient(90deg,
+      rgba(254, 181, 98, 1) 30%,
+      rgba(0, 0, 0, 1) 70%);
+  animation: left2 1.5s ease-in-out 1 forwards;
+}
+
+.Chart2 {
+  position: absolute;
+  height: 100%;
+  width: 600px;
+  background: linear-gradient(90deg,
+      rgba(254, 181, 98, 1) 30%,
+      rgba(0, 0, 0, 1) 70%);
+}
+
+@keyframes left2 {
+  0% {
+    left: 0px;
+  }
+
+  100% {
+    left: -300px;
+  }
+}
+
+.yellow {
+  width: 100%;
+  @include flex(column);
+  @include shadow1;
+  background-color: $color-primary;
+  border-radius: $radius;
+  padding: 20px;
+}
+
+
+.yellow div:nth-child(1) {
+  background-color: transparent;
+  -webkit-perspective: 900000px;
+  perspective: 900000px;
+}
+
+.yellow div:nth-child(1) div {
+  background-color: #fafafa;
+  margin-bottom: 30px;
+  padding: 20px 40px;
+  // box-shadow: 0 0 5px 3px rgba(0, 0, 0, 0.05);
+  border-radius: $radius;
+}
+
+.yellow div:nth-child(1) div img {
+  height: 300px;
+}
+
+.Svg1 {
+  position: relative;
+  z-index: 2;
+}
+
+.Svg2 {
+  position: absolute;
+  z-index: 1;
+}
+
+.Re {
+  background-color: $color-accent1;
+  color: white;
+  font-size: 21px;
+  width: 200px;
+  padding: 0 30px;
+  margin: 5px;
+  border-radius: 30px;
+  @include flex(row);
+}
