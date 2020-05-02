@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 
-import Result from "../../templates/Result/Result";
+import Result from "../../templates/Result/ResultTemplate";
 
 const WeightHeight = (props) => {
   const { index, pageIndex } = props;

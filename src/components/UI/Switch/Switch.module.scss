@@ -8,17 +8,22 @@
   background-color: white;
   border-radius: 100px;
   @include shadow1;
+  height: 27px;
+
+  @include tablet-desktop {
+    height: 33px;
+  }
 }
 
 .Switch {
-  @include font-small($bold);
+  @include fontSize1($bold);
   @include flex(row);
   z-index: 5;
   padding: 2px 6px;
   cursor: pointer;
 
   @include tablet-desktop {
-    @include font-body($bold);
+    @include fontSize2($bold);
   }
 }
 
@@ -47,11 +52,6 @@
 }
 
 .ChartSwitch {
-  height: 27px;
-
-  @include tablet-desktop {
-    height: 33px;
-  }
 
   .IconContainer img {
     height: 1em;
@@ -59,15 +59,13 @@
 }
 
 .ResultSwitch {
-  height: 30px;
-  width: 80px;
+  width: 75px;
 
   @include tablet-desktop {
-    height: 36px;
     width: 100px;
   }
 
   .IconContainer img {
-    height: 1.4em;
+    height: 1.3em;
   }
 }

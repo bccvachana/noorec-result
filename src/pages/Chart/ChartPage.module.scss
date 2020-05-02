@@ -34,8 +34,10 @@
 }
 
 .Bmi {
+  margin-top: 10px;
+
   @include tablet-desktop {
-    margin-top: 10px;
+    margin-top: 15px;
   }
 }
 

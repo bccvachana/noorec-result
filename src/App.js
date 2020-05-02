@@ -9,15 +9,15 @@ import "chartjs-plugin-datalabels";
 import Welcome from "./pages/Welcome/Welcome";
 import Result from "./pages/Result/Result";
 
-import WeightHeightChart from "./pages/ChartPage/WeightHeightChart";
-import WeightHeightCriteria from "./pages/CriteriaPage/WeightHeightCriteria/WeightHeightCriteria";
-import TemperatureChart from "./pages/ChartPage/TemperatureChart";
-import TemperatureCriteria from "./pages/CriteriaPage/TemperatureCriteria/TemperatureCriteria";
-import BloodPressureChart from "./pages/ChartPage/BloodPressureChart";
-import RateChart from "./pages/ChartPage/RateChart";
-import OxygenChart from "./pages/ChartPage/OxygenChart";
+import WeightHeightChart from "./pages/Chart/WeightHeightChart";
+import WeightHeightCriteria from "./pages/Criteria/WeightHeightCriteria/WeightHeightCriteria";
+import TemperatureChart from "./pages/Chart/TemperatureChart";
+import TemperatureCriteria from "./pages/Criteria/TemperatureCriteria/TemperatureCriteria";
+import BloodPressureChart from "./pages/Chart/BloodPressureChart";
+import RateChart from "./pages/Chart/RateChart";
+import OxygenChart from "./pages/Chart/OxygenChart";
 
-import WeightHeight from "./pages/WeightHeight/WeightHeight";
+import ResultTemplate from "./templates/Result/ResultTemplate";
 
 defaults.global.defaultFontFamily = "Prompt";
 defaults.global.defaultFontColor = "white";
@@ -49,6 +49,7 @@ class App extends Component {
     speed: 450,
     followFinger: false,
     mousewheel: true,
+    simulateTouch: false,
     pagination: {
       el: ".swiper-pagination",
       type: "progressbar",
@@ -77,17 +78,18 @@ class App extends Component {
 
   componentDidMount() {
     const noorecIndex = Number(window.sessionStorage.getItem("noorecIndex"));
-    setTimeout(() => {
+    let timer = setTimeout(() => {
       this.state.swiper.on("scroll", () => {
         this.state.swiper.mousewheel.disable();
-        const timer = setTimeout(() => {
+        let scrollTimer = setTimeout(() => {
           this.setState({ scroll: this.state.scroll + 1 });
           this.state.swiper.mousewheel.enable();
-          clearTimeout(timer);
+          clearTimeout(scrollTimer);
         }, 1300);
       });
       this.state.swiper.slideTo(noorecIndex, 600);
-    }, 500);
+      clearTimeout(timer);
+    }, 750);
   }
 
   render() {
@@ -108,16 +110,20 @@ class App extends Component {
           />
         </div>
         <div>
-          <WeightHeight index={this.state.index} pageIndex={2} />
-        </div>
-        <div>
-          <WeightHeightCriteria
+          <ResultTemplate
+            type="weightHeight"
             index={this.state.index}
-            pageIndex={3}
             isFromTop={this.isFromTop}
           />
         </div>
         <div>
+          <ResultTemplate
+            type="temperature"
+            index={this.state.index}
+            isFromTop={this.isFromTop}
+          />
+        </div>
+        {/* <div>
           <TemperatureChart index={this.state.index} pageIndex={4} />
         </div>
         <div>
@@ -138,7 +144,7 @@ class App extends Component {
         <div>
           <OxygenChart index={this.state.index} pageIndex={10} />
         </div>
-        <div></div>
+        <div></div> */}
       </Swiper>
     );
   }

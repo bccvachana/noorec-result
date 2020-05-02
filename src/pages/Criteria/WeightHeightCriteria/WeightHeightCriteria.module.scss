@@ -1,5 +1,31 @@
 @import "../../../var";
 
+.SwiperValueContainer {
+  flex-grow: 1;
+  max-height: 300px;
+  width: 100%;
+  position: relative;
+
+  >div {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    @include flex(row);
+  }
+}
+
+.ValueContainer {
+  @include flex(column);
+  align-items: flex-start;
+  height: 100%;
+
+  .ValueSpace {
+    width: 100%;
+    flex-grow: 1;
+    max-height: 20px;
+  }
+}
+
 .ColorBarContainer {
   margin-top: 20px;
   width: 100%;
@@ -12,11 +38,11 @@
 }
 
 .ColorBarWeightLabel {
-  @include font-small(500);
+  @include fontSize1(500);
   padding-bottom: 6px;
 
   @include tablet-desktop {
-    @include font-body(500);
+    @include fontSize2(500);
   }
 
   >div {
@@ -71,10 +97,10 @@
 
 .ColorBarDetail {
   padding-top: 6px;
-  @include font-small(500);
+  @include fontSize1(500);
 
   @include tablet-desktop {
-    @include font-body(500);
+    @include fontSize2(500);
   }
 
   >div {

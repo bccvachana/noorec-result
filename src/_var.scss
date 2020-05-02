@@ -72,6 +72,43 @@ $medium : 400;
   font-weight: $weight;
 }
 
+
+
+@mixin fontSize1($weight) {
+  font-size: 10px;
+  font-weight: $weight;
+}
+
+@mixin fontSize2($weight) {
+  font-size: 12.5px;
+  font-weight: $weight;
+}
+
+@mixin fontSize3($weight) {
+  font-size: 15px;
+  font-weight: $weight;
+}
+
+@mixin fontSize4($weight) {
+  font-size: 20px;
+  font-weight: $weight;
+}
+
+@mixin fontSize5($weight) {
+  font-size: 25px;
+  font-weight: $weight;
+}
+
+@mixin fontSize6($weight) {
+  font-size: 30px;
+  font-weight: $weight;
+}
+
+@mixin fontSize7($weight) {
+  font-size: 35px;
+  font-weight: $weight;
+}
+
 @mixin shadow1 {
   box-shadow: 0 0 8px 3px rgba(0, 0, 0, 0.05);
 }

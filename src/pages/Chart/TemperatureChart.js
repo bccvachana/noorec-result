@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import classes from "./ChartPage.module.scss";
 
-import ResultInfo from "../../components/UI/ResultInfo/ResultInfo";
+import ValueInfo from "../../components/UI/ValueInfo/ValueInfo";
 import ResultChart, {
   ValueIndexContext,
 } from "../../templates/Result/ResultChart";
@@ -14,7 +14,7 @@ const TemperatureChartInfo = (props) => {
     <div className={classes.InfoContainer}>
       <div className={`${classes.Row} InfoTitle`}>อุณหภูมิร่างกาย</div>
       <div className={classes.Row}>
-        <ResultInfo
+        <ValueInfo
           type="temperature"
           data={data[0].data}
           valueIndex={valueIndex}
@@ -32,18 +32,10 @@ const TemperatureChartInfo = (props) => {
 };
 
 const TemperatureChart = (props) => {
-  const temperatureData = [36.7, 36.0, 35.9, 37.0, 38.2, 36];
-  const data = [{ type: "temperature", data: temperatureData }];
-
-  const { index, pageIndex } = props;
+  const { data } = props;
 
   return (
-    <ResultChart
-      title="อุณหภูมิร่างกาย"
-      data={data}
-      index={index}
-      pageIndex={pageIndex}
-    >
+    <ResultChart {...props}>
       <TemperatureChartInfo data={data} />
     </ResultChart>
   );

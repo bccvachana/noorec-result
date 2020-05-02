@@ -37,7 +37,7 @@ const BpChart = (props) => {
 
   const chartWidth = 2 * 50 * dataData[0].length + 40;
   const isChartOverflow = chartWidth > containerWidth;
-  const fontSize = device === "Mobile" ? 14 : 17;
+  const fontSize = device === "Mobile" ? 12.5 : 15;
 
   return (
     <div className={classes.Chart}>

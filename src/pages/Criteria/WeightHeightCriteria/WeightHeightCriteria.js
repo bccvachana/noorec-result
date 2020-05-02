@@ -1,30 +1,40 @@
 import React, { useState, useEffect } from "react";
 import classes from "./WeightHeightCriteria.module.scss";
-import "../../../assets/WeightHeight/weightHeightSwiper.scss";
+import "../../../assets/WeightHeight/WeightHeightSwiper.scss";
 import Swiper from "react-id-swiper";
+import ValueInfo from "../../../components/UI/ValueInfo/ValueInfo";
 
 import ResultCriteria from "../../../templates/Result/ResultCriteria";
 import weightHeightStatic from "../../../assets/WeightHeight/WeightHeightStatic";
 
 const WeightHeightCriteria = (props) => {
-  const height = 179;
-  const bmiConst = (height * height) / 10000;
-
-  const { index, pageIndex, isFromTop } = props;
+  const { index, pageIndex, isFromTop, data } = props;
   const criteria = "extremeObase";
   const { title, detail, bar } = weightHeightStatic[criteria];
 
+  const [svgWidthRef, setSvgWidthRef] = useState(0);
   const [swiper, setSwiper] = useState(null);
   const [isSwiper, setIsSwiper] = useState(false);
 
-  const swiperParams = {
-    allowTouchMove: false,
-    spaceBetween: 30,
-    direction: "vertical",
-    getSwiper: (swiper) => {
-      setSwiper(swiper);
-    },
-  };
+  const height = data[1].data[data[1].data.length - 1];
+  const bmiConst = (height * height) / 10000;
+
+  useEffect(() => {
+    let timer = setTimeout(() => {
+      setSvgWidthRef(
+        document.getElementById("WeightHeightRef").clientWidth + 20
+      );
+      clearTimeout(timer);
+    }, 750);
+    window.addEventListener("resize", () => {
+      let resizeTimer = setTimeout(() => {
+        setSvgWidthRef(
+          document.getElementById("WeightHeightRef").clientWidth + 20
+        );
+        clearTimeout(resizeTimer);
+      }, 200);
+    });
+  }, []);
 
   useEffect(() => {
     if (swiper) {
@@ -49,6 +59,15 @@ const WeightHeightCriteria = (props) => {
     }
   }, [index]);
 
+  const swiperParams = {
+    allowTouchMove: false,
+    spaceBetween: 30,
+    direction: "vertical",
+    getSwiper: (swiper) => {
+      setSwiper(swiper);
+    },
+  };
+
   const reOrder = (criteria) => {
     const weightHeightStaticKey = Object.keys(weightHeightStatic);
     const index = weightHeightStaticKey.indexOf(criteria);
@@ -63,24 +82,35 @@ const WeightHeightCriteria = (props) => {
 
   return (
     <ResultCriteria criteria={title} detail={detail}>
-      {isSwiper ? (
-        <div id="resultSwiper">
-          <Swiper {...swiperParams}>
-            {[...Array(2)].map(() => {
-              return keyArray.map((key, index) => (
-                <div key={`${key}${index}`}>
-                  <img src={weightHeightStatic[key].svg} alt="svg" />
-                  <img
-                    className="Shadow"
-                    src={weightHeightStatic[key].shadow}
-                    alt="shadow"
-                  />
-                </div>
-              ));
-            })}
-          </Swiper>
+      <div className={classes.SwiperValueContainer}>
+        <div>
+          <img
+            id="WeightHeightRef"
+            src={weightHeightStatic["extremeObase"].svg}
+            alt="svg"
+          />
+          {isSwiper ? (
+            <div id="ResultSwiper" style={{ width: svgWidthRef }}>
+              <Swiper {...swiperParams}>
+                {[...Array(2)].map(() => {
+                  return keyArray.map((key, index) => (
+                    <div key={`${key}${index}`}>
+                      <img src={weightHeightStatic[key].svg} alt="svg" />
+                    </div>
+                  ));
+                })}
+              </Swiper>
+            </div>
+          ) : null}
+          <div className={classes.ValueContainer}>
+            <ValueInfo type="weight" data={data[0].data} />
+            <div className={classes.ValueSpace} />
+            <ValueInfo type="height" data={data[1].data} />
+            <div className={classes.ValueSpace} />
+            <ValueInfo type="bmi" data={data[2].data} />
+          </div>
         </div>
-      ) : null}
+      </div>
       <div className={classes.ColorBarContainer}>
         <div className={classes.ColorBarWeightLabel}>
           <div>{(18.5 * bmiConst).toFixed(1)}</div>

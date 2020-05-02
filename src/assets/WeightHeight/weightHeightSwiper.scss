@@ -1,14 +1,10 @@
 @import "../../var";
 
-#resultSwiper {
-  flex-grow: 1;
-  width: 60%;
-  max-width: 300px;
-  max-height: 300px;
+#ResultSwiper {
+  height: 100%;
+  width: 100%;
   position: relative;
-  background-color: #fafafa;
-  border-radius: $radius;
-  border: 10px solid #fafafa;
+  margin-right: 10px;
 
   >.swiper-container {
     position: absolute;
@@ -23,22 +19,15 @@
   }
 
   .swiper-slide {
-    @include flex(column);
-    padding: 5px;
-
     img {
       height: 100%;
-      z-index: 4;
-    }
-
-    .Shadow {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      padding: 5px;
-      z-index: 3;
-      top: 3px;
-      left: 5px;
+      padding-right: 10px;
     }
   }
+}
+
+#WeightHeightRef {
+  height: 100%;
+  position: absolute;
+  z-index: -5;
 }
