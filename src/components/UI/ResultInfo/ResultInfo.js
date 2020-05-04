@@ -1,11 +1,11 @@
 import React from "react";
 import classes from "./ResultInfo.module.scss";
-import { dataStatic } from "../../../assets/dataStatic";
+import { dataTypeStatic } from "../../../assets/dataTypeStatic";
 import ResultArrow from "../../../assets/ResultArrow.svg";
 
 const ResultInfo = (props) => {
   const { type, data, valueIndex, noTitle } = props;
-  const { title, unit, toFixed } = dataStatic[type];
+  const { title, unit, toFixed } = dataTypeStatic[type];
   const difference = data[valueIndex - 1]
     ? data[valueIndex] - data[valueIndex - 1]
     : 0;

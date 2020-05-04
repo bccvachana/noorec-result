@@ -24,7 +24,7 @@ const Welcome = (props) => {
           </div>
           <img
             className={classes.Profile}
-            src="https://platform-lookaside.fbsbx.com/platform/profilepic/?psid=3366546513417226&width=1024&ext=1588446791&hash=AeSpTApEOmdVqc9L"
+            src="https://platform-lookaside.fbsbx.com/platform/profilepic/?psid=3366546513417226&width=1024&ext=1591070495&hash=AeSgTYO7XIh6YAb4"
             alt="profile"
           />
         </div>

@@ -8,7 +8,6 @@ export const ValueIndexContext = React.createContext();
 
 const ResultChart = (props) => {
   const { children, data, index, pageIndex, isChartScroll } = props;
-  console.log(props);
 
   const [isChart, setIsChart] = useState(false);
   const [valueIndex, setValueIndex] = useState(0);

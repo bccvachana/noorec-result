@@ -6,18 +6,22 @@ import ResultCriteria from "../../../templates/Result/ResultCriteria";
 import temperatureSvg from "../../../assets/Temperature/temperature.svg";
 
 const TemperatureCriteria = (props) => {
-  const { data } = props;
+  const { data, index } = props;
   const [svgHeightRef, setSvgHeightRef] = useState(0);
 
   useEffect(() => {
-    let timer = setTimeout(() => {
-      setSvgHeightRef(document.getElementById("TempRef").clientHeight);
-      clearTimeout(timer);
-    }, 750);
+    // let timer = setTimeout(() => {
+    //   setSvgHeightRef(document.getElementById("TempRef").clientHeight);
+    //   clearTimeout(timer);
+    // }, 750);
     window.addEventListener("resize", () => {
       setSvgHeightRef(0);
     });
   }, []);
+
+  useEffect(() => {
+    setSvgHeightRef(document.getElementById("TempRef").clientHeight);
+  }, [index]);
 
   useEffect(() => {
     setSvgHeightRef(document.getElementById("TempRef").clientHeight);

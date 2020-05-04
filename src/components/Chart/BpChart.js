@@ -12,7 +12,7 @@ import BarIconWhite from "../../assets/Chart/BarWhite.svg";
 import LineIcon from "../../assets/Chart/Line.svg";
 import LineIconWhite from "../../assets/Chart/LineWhite.svg";
 
-import { dataStatic } from "../../assets/dataStatic";
+import { dataTypeStatic } from "../../assets/dataTypeStatic";
 
 const BpChart = (props) => {
   const { data, valueIndex, setValueIndex, device } = props;
@@ -79,7 +79,7 @@ const BpChart = (props) => {
           valueIndex={valueIndex}
           setValueIndex={setValueIndex}
           fontSize={fontSize}
-          toFixed={dataStatic[dataType].toFixed}
+          toFixed={dataTypeStatic[dataType].toFixed}
           isChartOverflow={isChartOverflow}
           scroll={scroll}
         />
@@ -91,7 +91,7 @@ const BpChart = (props) => {
           valueIndex={valueIndex}
           setValueIndex={setValueIndex}
           fontSize={fontSize}
-          toFixed={dataStatic[dataType].toFixed}
+          toFixed={dataTypeStatic[dataType].toFixed}
           isChartOverflow={isChartOverflow}
           scroll={scroll}
           opacity={chartType === 1 ? 1 : 0}

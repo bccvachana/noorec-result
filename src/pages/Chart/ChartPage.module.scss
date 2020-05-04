@@ -22,15 +22,6 @@
   .RowSpaceCriteria {
     width: 5px;
   }
-
-  .BpRowSpace {
-    flex-grow: 1;
-    max-width: 30px;
-
-    @include tablet-desktop {
-      max-width: 35px;
-    }
-  }
 }
 
 .Bmi {
@@ -39,12 +30,16 @@
   @include tablet-desktop {
     margin-top: 15px;
   }
+
+  >div:nth-child(2) {
+    width: 88px;
+
+    @include tablet-desktop {
+      width: 95px;
+    }
+  }
 }
 
 .BloodPressure {
-  margin: 10px 0 10px;
-
-  @include tablet-desktop {
-    margin-top: 10px;
-  }
+  margin: 10px 0 5px;
 }

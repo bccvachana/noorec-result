@@ -1,0 +1,121 @@
+@import "../../var";
+
+$mobileMargin: 14px;
+$tabletMargin: 17px;
+
+.OverviewContainer {
+  background: linear-gradient(180deg,
+      rgba(254, 181, 98, 1) 25%,
+      rgba(247, 247, 247, 1) 85%);
+}
+
+.ProfileTitle {
+  width: 95%;
+  max-width: 480px;
+  height: 55px;
+  margin-bottom: $mobileMargin;
+  @include flex(row);
+  justify-content: flex-start;
+
+  @include tablet-desktop {
+    height: 70px;
+    margin-bottom: $tabletMargin;
+  }
+
+  .Profile {
+    height: 100%;
+    box-sizing: content-box;
+    border: solid white 3px;
+    border-radius: 100%;
+    margin-right: $mobileMargin;
+
+    @include tablet-desktop {
+      border: solid white 4px;
+      margin-right: $tabletMargin;
+    }
+  }
+
+  .Title {
+    flex-grow: 1;
+    overflow: hidden;
+    @include fontSize4($bold);
+    line-height: 1.3;
+
+    @include tablet-desktop {
+      @include fontSize5($bold);
+    }
+
+    div {
+      width: 100%;
+      overflow: hidden;
+      text-align: left;
+      color: $color-primary;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+
+    .Detail {
+      font-size: 0.8em;
+    }
+  }
+}
+
+.Row {
+  width: 95%;
+  max-width: 480px;
+  margin-bottom: $mobileMargin;
+  @include flex(row);
+
+  @include tablet-desktop {
+    margin-bottom: $tabletMargin;
+  }
+
+  &:nth-child(5) {
+    margin-bottom: 0;
+  }
+
+  .Space {
+    width: $mobileMargin;
+
+    @include tablet-desktop {
+      width: $tabletMargin;
+    }
+  }
+}
+
+.Info {
+  width: 50%;
+  height: 100%;
+  padding: 10px 5px;
+  background-color: $color-primary;
+  border-radius: $radius;
+  @include shadow1;
+  @include flex(column);
+
+  &.WeightHeight {
+    padding-bottom: 5px;
+    ;
+  }
+
+  &.BloodPressure {
+    width: 100%;
+  }
+
+  >div:nth-child(1) {
+    margin-bottom: 5px;
+  }
+
+  .ValueContainer {
+    @include flex(column);
+
+    .Value {
+      @include fontSize6(300);
+      line-height: 1.1;
+      margin-bottom: 2px;
+
+      @include tablet-desktop {
+        font-size: 32.5px;
+      }
+    }
+  }
+}

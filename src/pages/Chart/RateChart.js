@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import classes from "./ChartPage.module.scss";
 
-import ResultInfo from "../../components/UI/ResultInfo/ResultInfo";
+import ValueInfo from "../../components/UI/ValueInfo/ValueInfo";
 import ResultChart, {
   ValueIndexContext,
 } from "../../templates/Result/ResultChart";
@@ -14,7 +14,7 @@ const RateChartInfo = (props) => {
     <div className={classes.InfoContainer}>
       <div className={`${classes.Row} InfoTitle`}>ชีพจร</div>
       <div className={classes.Row}>
-        <ResultInfo
+        <ValueInfo
           type="rate"
           data={data[0].data}
           valueIndex={valueIndex}
@@ -32,13 +32,10 @@ const RateChartInfo = (props) => {
 };
 
 const RateChart = (props) => {
-  const rateData = [84, 92, 80, 97, 102, 115];
-  const data = [{ type: "rate", data: rateData }];
-
-  const { index, pageIndex } = props;
+  const { data } = props;
 
   return (
-    <ResultChart title="ชีพจร" data={data} index={index} pageIndex={pageIndex}>
+    <ResultChart {...props}>
       <RateChartInfo data={data} />
     </ResultChart>
   );

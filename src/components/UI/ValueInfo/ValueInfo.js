@@ -1,11 +1,11 @@
 import React from "react";
 import classes from "./ValueInfo.module.scss";
-import { dataStatic } from "../../../assets/dataStatic";
+import { dataTypeStatic } from "../../../assets/dataTypeStatic";
 import ResultArrow from "../../../assets/ResultArrow.svg";
 
 const ValueInfo = (props) => {
-  const { type, data, valueIndex, noTitle } = props;
-  const { title, unit, toFixed } = dataStatic[type];
+  const { type, data, valueIndex, noTitle, titleCenter } = props;
+  const { title, unit, toFixed } = dataTypeStatic[type];
 
   const isValueIndex = valueIndex || valueIndex === 0;
 
@@ -18,23 +18,21 @@ const ValueInfo = (props) => {
   return (
     <div
       className={classes.ValueInfo}
-      style={{ alignItems: isValueIndex ? "center" : "flex-start" }}
+      style={{
+        alignItems: isValueIndex || titleCenter ? "center" : "flex-start",
+      }}
     >
       {noTitle ? null : <div className="InfoTitle">{title}</div>}
       {isValueIndex ? (
         <div className={classes.Container}>
-          <div
-            className={`InfoValue ${classes.ValueChart} ${
-              toFixed > 0 ? classes.toFixed : ""
-            }`}
-          >
+          <div className={`InfoValue ${classes.ValueChart} ${classes[type]}`}>
             {isValueIndex
               ? data[valueIndex].toFixed(toFixed)
               : data[data.length - 1]}
           </div>
           <div className={classes.Space}></div>
           <div
-            className={`${classes.DetailContainer} ${
+            className={`${classes.DetailContainerChart} ${
               toFixed > 0 ? classes.toFixed : ""
             }`}
           >

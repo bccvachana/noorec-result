@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import classes from "./ChartPage.module.scss";
 
-import ResultInfo from "../../components/UI/ResultInfo/ResultInfo";
+import ValueInfo from "../../components/UI/ValueInfo/ValueInfo";
 import ResultChart, {
   ValueIndexContext,
 } from "../../templates/Result/ResultChart";
@@ -13,13 +13,13 @@ const BloodPressureChartInfo = (props) => {
   return (
     <div className={classes.InfoContainer}>
       <div className={classes.Row}>
-        <ResultInfo
+        <ValueInfo
           type="systolic"
           data={data[0].data[0]}
           valueIndex={valueIndex}
         />
-        <div className={classes.BpRowSpace}></div>
-        <ResultInfo
+        <div className={classes.RowSpace}></div>
+        <ValueInfo
           type="diastolic"
           data={data[0].data[1]}
           valueIndex={valueIndex}
@@ -36,19 +36,10 @@ const BloodPressureChartInfo = (props) => {
 };
 
 const BloodPressureChart = (props) => {
-  const SystolicData = [120, 122, 130, 112, 115, 135, 122];
-  const DiastolicData = [80, 79, 90, 85, 87, 77, 100];
-  const data = [{ type: "bloodPressure", data: [SystolicData, DiastolicData] }];
-
-  const { index, pageIndex } = props;
+  const { data } = props;
 
   return (
-    <ResultChart
-      title="ความดันโลหิต"
-      data={data}
-      index={index}
-      pageIndex={pageIndex}
-    >
+    <ResultChart {...props}>
       <BloodPressureChartInfo data={data} />
     </ResultChart>
   );

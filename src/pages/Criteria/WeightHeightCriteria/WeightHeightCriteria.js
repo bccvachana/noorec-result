@@ -9,8 +9,8 @@ import weightHeightStatic from "../../../assets/WeightHeight/WeightHeightStatic"
 
 const WeightHeightCriteria = (props) => {
   const { index, pageIndex, isFromTop, data } = props;
-  const criteria = "extremeObase";
-  const { title, detail, bar } = weightHeightStatic[criteria];
+  const criteria = "underWeight";
+  const { title, detail, bar, marginLeft } = weightHeightStatic[criteria];
 
   const [svgWidthRef, setSvgWidthRef] = useState(0);
   const [swiper, setSwiper] = useState(null);
@@ -20,12 +20,12 @@ const WeightHeightCriteria = (props) => {
   const bmiConst = (height * height) / 10000;
 
   useEffect(() => {
-    let timer = setTimeout(() => {
-      setSvgWidthRef(
-        document.getElementById("WeightHeightRef").clientWidth + 20
-      );
-      clearTimeout(timer);
-    }, 750);
+    // let timer = setTimeout(() => {
+    //   setSvgWidthRef(
+    //     document.getElementById("WeightHeightRef").clientWidth + 20
+    //   );
+    //   clearTimeout(timer);
+    // }, 750);
     window.addEventListener("resize", () => {
       let resizeTimer = setTimeout(() => {
         setSvgWidthRef(
@@ -49,6 +49,7 @@ const WeightHeightCriteria = (props) => {
   }, [swiper]);
 
   useEffect(() => {
+    setSvgWidthRef(document.getElementById("WeightHeightRef").clientWidth + 20);
     if (index === pageIndex) {
       setIsSwiper(true);
     } else {
@@ -82,7 +83,10 @@ const WeightHeightCriteria = (props) => {
 
   return (
     <ResultCriteria criteria={title} detail={detail}>
-      <div className={classes.SwiperValueContainer}>
+      <div
+        className={classes.SwiperValueContainer}
+        style={{ marginLeft: marginLeft }}
+      >
         <div>
           <img
             id="WeightHeightRef"

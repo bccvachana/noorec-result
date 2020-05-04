@@ -12,7 +12,7 @@ import BarIconWhite from "../../assets/Chart/BarWhite.svg";
 import LineIcon from "../../assets/Chart/Line.svg";
 import LineIconWhite from "../../assets/Chart/LineWhite.svg";
 
-import { dataStatic } from "../../assets/dataStatic";
+import { dataTypeStatic } from "../../assets/dataTypeStatic";
 
 const Chart = (props) => {
   const { data, valueIndex, setValueIndex, device } = props;
@@ -34,7 +34,7 @@ const Chart = (props) => {
   }, []);
 
   const switches = data.map(({ type }) => {
-    return dataStatic[type].title;
+    return dataTypeStatic[type].title;
   });
   const { type: dataType, data: dataData } = data[dataIndex];
 
@@ -90,7 +90,7 @@ const Chart = (props) => {
           valueIndex={valueIndex}
           setValueIndex={setValueIndex}
           fontSize={fontSize}
-          toFixed={dataStatic[dataType].toFixed}
+          toFixed={dataTypeStatic[dataType].toFixed}
           isChartOverflow={isChartOverflow}
           scroll={scroll}
         />
@@ -101,7 +101,7 @@ const Chart = (props) => {
           valueIndex={valueIndex}
           setValueIndex={setValueIndex}
           fontSize={fontSize}
-          toFixed={dataStatic[dataType].toFixed}
+          toFixed={dataTypeStatic[dataType].toFixed}
           isChartOverflow={isChartOverflow}
           scroll={scroll}
           opacity={chartType === 1 ? 1 : 0}

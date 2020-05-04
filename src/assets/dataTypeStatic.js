@@ -1,4 +1,4 @@
-export const dataStatic = {
+export const dataTypeStatic = {
   weight: {
     title: "น้ำหนัก",
     unit: "kg",

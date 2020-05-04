@@ -7,15 +7,7 @@ import { defaults } from "react-chartjs-2";
 import "chartjs-plugin-datalabels";
 
 import Welcome from "./pages/Welcome/Welcome";
-import Result from "./pages/Result/Result";
-
-import WeightHeightChart from "./pages/Chart/WeightHeightChart";
-import WeightHeightCriteria from "./pages/Criteria/WeightHeightCriteria/WeightHeightCriteria";
-import TemperatureChart from "./pages/Chart/TemperatureChart";
-import TemperatureCriteria from "./pages/Criteria/TemperatureCriteria/TemperatureCriteria";
-import BloodPressureChart from "./pages/Chart/BloodPressureChart";
-import RateChart from "./pages/Chart/RateChart";
-import OxygenChart from "./pages/Chart/OxygenChart";
+import Overview from "./pages/Overview/Overview";
 
 import ResultTemplate from "./templates/Result/ResultTemplate";
 
@@ -26,8 +18,8 @@ let recordData = {
   weight: "90.6",
   height: "180",
   temperature: "35.10",
-  bloodPressureHigh: "140",
-  bloodPressureLow: "88",
+  systolic: "140",
+  diastolic: "88",
   rate: "83",
   oxygen: "98",
 };
@@ -103,8 +95,8 @@ class App extends Component {
           />
         </div>
         <div>
-          <Result
-            recordData={recordData}
+          <Overview
+            data={recordData}
             index={this.state.index}
             isFromTop={this.isFromTop}
           />
@@ -123,28 +115,27 @@ class App extends Component {
             isFromTop={this.isFromTop}
           />
         </div>
-        {/* <div>
-          <TemperatureChart index={this.state.index} pageIndex={4} />
-        </div>
         <div>
-          <TemperatureCriteria
+          <ResultTemplate
+            type="bloodPressure"
             index={this.state.index}
-            pageIndex={3}
             isFromTop={this.isFromTop}
           />
         </div>
         <div>
-          <BloodPressureChart index={this.state.index} pageIndex={6} />
+          <ResultTemplate
+            type="rate"
+            index={this.state.index}
+            isFromTop={this.isFromTop}
+          />
         </div>
-        <div></div>
         <div>
-          <RateChart index={this.state.index} pageIndex={8} />
+          <ResultTemplate
+            type="oxygen"
+            index={this.state.index}
+            isFromTop={this.isFromTop}
+          />
         </div>
-        <div></div>
-        <div>
-          <OxygenChart index={this.state.index} pageIndex={10} />
-        </div>
-        <div></div> */}
       </Swiper>
     );
   }
