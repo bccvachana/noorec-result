@@ -34,7 +34,7 @@ const ValueInfo = (props) => {
           <div
             className={`${classes.DetailContainerChart} ${
               toFixed > 0 ? classes.toFixed : ""
-            }`}
+            } ${classes[type]}`}
           >
             <div className={classes.Unit}>{unit}</div>
             {isValueIndex ? (

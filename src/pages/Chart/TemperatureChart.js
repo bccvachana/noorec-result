@@ -4,7 +4,7 @@ import classes from "./ChartPage.module.scss";
 import ValueInfo from "../../components/UI/ValueInfo/ValueInfo";
 import ResultChart, {
   ValueIndexContext,
-} from "../../templates/Result/ResultChart";
+} from "../../components/Result/ResultChart";
 
 const TemperatureChartInfo = (props) => {
   const { data } = props;

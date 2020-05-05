@@ -1,5 +1,5 @@
 import React from "react";
-import classes from "./ResultTemplate.module.scss";
+import classes from "./Result.module.scss";
 
 const ResultCriteria = (props) => {
   const { children, criteria, detail } = props;

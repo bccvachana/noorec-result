@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import classes from "./TemperatureCriteria.module.scss";
 import ValueInfo from "../../../components/UI/ValueInfo/ValueInfo";
 
-import ResultCriteria from "../../../templates/Result/ResultCriteria";
+import ResultCriteria from "../../../components/Result/ResultCriteria";
 import temperatureSvg from "../../../assets/Temperature/temperature.svg";
 
 const TemperatureCriteria = (props) => {
@@ -31,7 +31,11 @@ const TemperatureCriteria = (props) => {
     <ResultCriteria
       criteria={"ปกติ"}
       detail={
-        "รูปร่างอวบมาก หรือมองดูอ้วนแล้ว ควรควบคุมอาหารโดยลดปริมาณอาหาร หรือปรับเปลี่ยนอาหารจากที่ให้พลังงานมาก เป็นอาหารที่ให้พลังงานน้อย"
+        <div>
+          อุณหภูมิร่างกายของคุณอยู่ในเกณฑ์ปกติ
+          รักษาสุขภาพให้เเข็งแรงด้วยการรับประทานอาหารให้ครบ 5 หมู่
+          ออกกำลังอย่างสม่ำเสมอ และพักผ่อนให้เพียงพอ
+        </div>
       }
     >
       <div className={classes.TemperatureContainer}>

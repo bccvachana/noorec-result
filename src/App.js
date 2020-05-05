@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 
+import Modal from "./components/UI/Modal/Modal";
 import Swiper from "react-id-swiper";
 import "./assets/style/swiper.scss";
 
@@ -9,7 +10,9 @@ import "chartjs-plugin-datalabels";
 import Welcome from "./pages/Welcome/Welcome";
 import Overview from "./pages/Overview/Overview";
 
-import ResultTemplate from "./templates/Result/ResultTemplate";
+import Result from "./components/Result/Result";
+
+export const ModalContext = React.createContext();
 
 defaults.global.defaultFontFamily = "Prompt";
 defaults.global.defaultFontColor = "white";
@@ -33,6 +36,8 @@ class App extends Component {
     index: 0,
     swiper: null,
     scroll: 0,
+    isModal: false,
+    modalType: "weightHeight",
   };
   isFromTop = true;
 
@@ -85,58 +90,75 @@ class App extends Component {
   }
 
   render() {
+    const { isModal, modalType } = this.state;
     return (
-      <Swiper {...this.swiperParams}>
-        <div>
-          <Welcome
-            next={() =>
-              this.state.swiper ? this.state.swiper.slideNext() : null
-            }
-          />
-        </div>
-        <div>
-          <Overview
-            data={recordData}
-            index={this.state.index}
-            isFromTop={this.isFromTop}
-          />
-        </div>
-        <div>
-          <ResultTemplate
-            type="weightHeight"
-            index={this.state.index}
-            isFromTop={this.isFromTop}
-          />
-        </div>
-        <div>
-          <ResultTemplate
-            type="temperature"
-            index={this.state.index}
-            isFromTop={this.isFromTop}
-          />
-        </div>
-        <div>
-          <ResultTemplate
-            type="bloodPressure"
-            index={this.state.index}
-            isFromTop={this.isFromTop}
-          />
-        </div>
-        <div>
-          <ResultTemplate
-            type="rate"
-            index={this.state.index}
-            isFromTop={this.isFromTop}
-          />
-        </div>
-        <div>
-          <ResultTemplate
-            type="oxygen"
-            index={this.state.index}
-            isFromTop={this.isFromTop}
-          />
-        </div>
-      </Swiper>
+      <React.Fragment>
+        <Modal
+          isModal={isModal}
+          closeModal={() => {
+            this.setState({ isModal: false });
+          }}
+          modalType={modalType}
+        />
+        <ModalContext.Provider
+          value={{
+            openModal: (type) =>
+              this.setState({ isModal: true, modalType: type }),
+          }}
+        >
+          <Swiper {...this.swiperParams}>
+            <div>
+              <Welcome
+                next={() =>
+                  this.state.swiper ? this.state.swiper.slideNext() : null
+                }
+              />
+            </div>
+            <div>
+              <Overview
+                data={recordData}
+                index={this.state.index}
+                isFromTop={this.isFromTop}
+              />
+            </div>
+            <div>
+              <Result
+                type="weightHeight"
+                index={this.state.index}
+                isFromTop={this.isFromTop}
+              />
+            </div>
+            <div>
+              <Result
+                type="temperature"
+                index={this.state.index}
+                isFromTop={this.isFromTop}
+              />
+            </div>
+            <div>
+              <Result
+                type="bloodPressure"
+                index={this.state.index}
+                isFromTop={this.isFromTop}
+              />
+            </div>
+            <div>
+              <Result
+                type="rate"
+                index={this.state.index}
+                isFromTop={this.isFromTop}
+              />
+            </div>
+            <div>
+              <Result
+                type="oxygen"
+                index={this.state.index}
+                isFromTop={this.isFromTop}
+              />
+            </div>
+          </Swiper>
+        </ModalContext.Provider>
+      </React.Fragment>
     );
   }
 }

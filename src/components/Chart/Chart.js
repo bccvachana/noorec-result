@@ -40,7 +40,7 @@ const Chart = (props) => {
 
   const chartWidth = 50 * dataData.length + 40;
   const isChartOverflow = chartWidth > containerWidth;
-  const fontSize = device === "Mobile" ? 12.5 : 15;
+  const fontSize = device === "Mobile" ? 14 : 17;
 
   return (
     <div className={classes.Chart}>

@@ -7,14 +7,14 @@ import arrowSvg from "../../assets/Welcome/arrow.svg";
 
 const Welcome = (props) => {
   return (
-    <div className="FullPageContainer">
+    <div className={`FullPageContainer ${classes.Container}`}>
       <div className={classes.Triangle}></div>
       <div className={classes.Content}>
         <div className={classes.Before}></div>
         <img className={classes.Logo} src={logoSvg} alt="logoSvg" />
         <div className={classes.TextProfileContainer}>
-          <div>
-            <div className={classes.Title}>บันทึกข้อมูลสุขภาพ</div>
+          <div className={classes.Title}>
+            <div>บันทึกข้อมูลสุขภาพ</div>
             <div className={classes.Detail}>
               ของคุณ{" "}
               <span style={{ color: "#fa5458" }}>

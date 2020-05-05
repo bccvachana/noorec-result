@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import classes from "./BloodPressureCriteria.module.scss";
 import ValueInfo from "../../../components/UI/ValueInfo/ValueInfo";
 
-import ResultCriteria from "../../../templates/Result/ResultCriteria";
+import ResultCriteria from "../../../components/Result/ResultCriteria";
 import Svg1 from "../../../assets/BloodPressure/1.svg";
 import Svg2 from "../../../assets/BloodPressure/2.svg";
 

@@ -3,17 +3,8 @@ import { motion } from "framer-motion";
 import classes from "./RateCriteria.module.scss";
 import ValueInfo from "../../../components/UI/ValueInfo/ValueInfo";
 
-import ResultCriteria from "../../../templates/Result/ResultCriteria";
+import ResultCriteria from "../../../components/Result/ResultCriteria";
 import Svg1 from "../../../assets/Rate/1.svg";
-
-const rateAnimation = {
-  hidden: {
-    pathLength: 0,
-  },
-  visible: {
-    pathLength: 1,
-  },
-};
 
 const RateCriteria = (props) => {
   const { data, index } = props;
@@ -68,14 +59,13 @@ const RateCriteria = (props) => {
               <motion.path
                 d="M6.5 85.5 182.5 85.5 205.5 6.5 245.5 154.5 289.5 47.5 304.5 85.5 476.5 85.5"
                 animate={{
-                  pathLength: [0, 1, 1, 1],
-                  pathOffset: [0, 0, 0, 1],
-                  opacity: [1, 1, 1, 0],
+                  pathLength: [0, 1, 1],
+                  opacity: [1, 1, 0],
                 }}
                 transition={{
-                  duration: 2.5,
-                  times: [0, 0.4, 0.6, 1],
-                  ease: "easeOut",
+                  duration: 2.7,
+                  times: [0, 0.8, 1],
+                  ease: "easeInOut",
                   loop: Infinity,
                 }}
               />
@@ -83,9 +73,7 @@ const RateCriteria = (props) => {
           </div>
         </div>
       </div>
-      <div className={classes.ValueContainer}>
-        <ValueInfo type="rate" data={data[0].data} titleCenter />
-      </div>
+      <ValueInfo type="rate" data={data[0].data} titleCenter />
     </ResultCriteria>
   );
 };

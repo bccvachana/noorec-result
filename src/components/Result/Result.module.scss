@@ -3,13 +3,12 @@
 .Title {
   width: 100%;
   max-width: 640px;
-  margin-bottom: 18px;
+  margin-bottom: 15px;
   @include flex(row);
-  @include fontSize4($bold);
   justify-content: space-between;
 
   @include tablet-desktop {
-    @include fontSize5($bold);
+    margin-bottom: 20px;
   }
 }
 
@@ -24,6 +23,10 @@
   flex-grow: 1;
   @include flex(column);
   @include shadow1;
+
+  @include tablet-desktop {
+    padding: 25px 0;
+  }
 }
 
 .ResultCriteria {
@@ -58,30 +61,43 @@
 }
 
 .Criteria {
-  margin-top: 25px;
+  margin-top: 20px;
   background-color: $color-accent2;
-  font-size: 17.5px;
-  font-weight: 600;
   color: white;
-  padding: 2px 10px;
+  padding: 1px 10px;
   min-width: 150px;
   border-radius: 100px;
+  @include fontH2;
 
   @include tablet-desktop {
-    font-size: 25px;
-    min-width: 200px;
+    min-width: 175px;
   }
 }
 
 .CriteriaDetail {
-  margin-top: 20px;
+  margin-top: 15px;
   padding: 2px 10px;
   max-width: 400px;
-  font-family: Arial, Helvetica, Sans-serif;
-  line-height: 1.6;
-  @include fontSize2($medium);
+  @include fontBody;
+
+  * {
+    @include fontBody;
+  }
+
+}
+
+.TitleInfoContainer {
+  height: 27px;
+  @include fontH1;
 
   @include tablet-desktop {
-    @include fontSize3($medium);
+    height: 33px;
+  }
+
+  img {
+    height: 0.7em;
+    opacity: 0.2;
+    margin-left: 10px;
+    cursor: pointer;
   }
 }

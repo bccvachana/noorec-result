@@ -54,11 +54,7 @@
 }
 
 .DetailContainer {
-  @include fontSize1(500);
-
-  @include tablet-desktop {
-    @include fontSize2(500);
-  }
+  @include fontCaption(500);
 
   .Unit {
     color: $color-detail;
@@ -66,13 +62,12 @@
 }
 
 .DetailContainerChart {
-  @include fontSize1(500);
-  line-height: 1.2;
+  @include fontCaption(500);
+  line-height: 0.9;
   width: 28px;
 
   @include tablet-desktop {
-    @include fontSize2(500);
-    line-height: 1.3;
+    line-height: 1.2;
     width: 32px;
   }
 
@@ -85,6 +80,15 @@
   }
 
   &.toFixed {
+    width: 38px;
+
+    @include tablet-desktop {
+      width: 45px;
+    }
+  }
+
+  &.systolic,
+  &.diastolic {
     width: 37px;
 
     @include tablet-desktop {

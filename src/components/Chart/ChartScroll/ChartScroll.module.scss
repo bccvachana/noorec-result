@@ -29,7 +29,6 @@
   height: 20px;
   left: calc(100% - 50px);
   animation: Scroll 1.5s ease-in-out 1;
-  @include font-body(600);
   @include shadow1;
 }
 

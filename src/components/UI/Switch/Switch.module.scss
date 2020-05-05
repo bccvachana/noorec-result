@@ -8,7 +8,7 @@
   background-color: white;
   border-radius: 100px;
   @include shadow1;
-  height: 27px;
+  height: 28px;
 
   @include tablet-desktop {
     height: 33px;
@@ -16,15 +16,11 @@
 }
 
 .Switch {
-  @include fontSize1($bold);
+  @include fontCaption($bold);
   @include flex(row);
   z-index: 5;
   padding: 2px 6px;
   cursor: pointer;
-
-  @include tablet-desktop {
-    @include fontSize2($bold);
-  }
 }
 
 .SwitchTypeActive {
@@ -66,6 +62,6 @@
   }
 
   .IconContainer img {
-    height: 1.3em;
+    height: 1.25em;
   }
 }

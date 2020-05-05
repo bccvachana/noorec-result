@@ -1,1 +1,69 @@
 @import "../../../var";
+
+.OxygenContainer {
+  flex-grow: 1;
+  width: 100%;
+  max-height: 275px;
+  position: relative;
+}
+
+.Svg1Container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  @include flex(column);
+
+  >img {
+    max-width: 80%;
+    max-height: 80%;
+  }
+}
+
+.Svg2Container {
+  position: relative;
+
+  .Svg2 {
+    position: absolute;
+    height: 23%;
+    left: 28%;
+    top: 0;
+  }
+
+  .Svg3 {
+    position: absolute;
+    height: 34%;
+    right: 13.5%;
+    top: 9%;
+  }
+
+  .Svg4 {
+    position: absolute;
+    height: 61%;
+    left: 0;
+    bottom: 0;
+  }
+}
+
+.Animate:nth-child(1) {
+  animation: ScaleOpacity 300ms ease-in-out 200ms 1 forwards;
+}
+
+.Animate:nth-child(2) {
+  animation: ScaleOpacity 300ms ease-in-out 500ms 1 forwards;
+}
+
+.Animate:nth-child(3) {
+  animation: ScaleOpacity 300ms ease-in-out 800ms 1 forwards;
+}
+
+@keyframes ScaleOpacity {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}

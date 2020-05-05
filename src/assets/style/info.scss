@@ -1,35 +1,27 @@
 @import "../../var";
 
 .InfoTitle {
-  @include fontSize2($bold);
-  margin-bottom: 1px;
-
-  @include tablet-desktop {
-    @include fontSize3($bold);
-  }
+  @include fontCaption($bold);
+  margin-bottom: 2px;
 }
 
 .InfoValue {
-  font-size: 32.5px;
+  font-size: 33px;
   font-weight: 300;
   line-height: 1.1;
 
   @include tablet-desktop {
-    @include fontSize7(300)
+    font-size: 37px;
   }
 }
 
 .InfoUnit {
-  @include fontSize1(500);
+  @include fontCaption(500);
   color: $color-detail;
-
-  @include tablet-desktop {
-    @include fontSize2(500);
-  }
 }
 
 .InfoCriteria {
-  @include fontSize1($bold);
+  @include fontCaption($bold);
   background-color: $color-accent2;
   color: $color-primary;
   border-radius: 50px;
@@ -37,7 +29,6 @@
   min-width: 50px;
 
   @include tablet-desktop {
-    @include fontSize2($bold);
     min-width: 65px;
   }
 }

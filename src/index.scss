@@ -22,7 +22,11 @@ body {
   background-color: #f7f7f7;
   overflow-x: hidden;
   overflow-y: hidden;
-  font-size: 14px;
+  font-size: 13.5px;
+
+  @include tablet-desktop {
+    font-size: 16.5px;
+  }
 }
 
 .FullPageContainer {
@@ -33,7 +37,7 @@ body {
   min-height: 518px;
   position: relative;
   margin: 0 auto;
-  padding: 27px 20px 20px;
+  padding: 22px 20px 15px;
 
   @include tablet-desktop {
     padding: 20px 50px;

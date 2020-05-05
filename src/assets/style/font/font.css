@@ -51,3 +51,8 @@
   src: url("Prompt-Black.ttf") format("truetype");
   font-weight: 800;
 }
+
+@font-face {
+  font-family: TATSanaSuksa;
+  src: url(TATSANA-SUKSA-REG.ttf);
+}

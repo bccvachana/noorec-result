@@ -47,66 +47,50 @@ $radius: 15px;
 $bold : 600;
 $medium : 400;
 
-@mixin font-small($weight) {
-  font-size: 10.5px;
-  font-weight: $weight;
-}
-
-@mixin font-body($weight) {
-  font-size: 14px;
-  font-weight: $weight;
-}
-
-@mixin font-h2($weight) {
-  font-size: 21px;
-  font-weight: $weight;
-}
-
-@mixin font-h1($weight) {
+@mixin fontH0 {
   font-size: 28px;
-  font-weight: $weight;
+  font-weight: $bold;
+
+  @include tablet-desktop {
+    font-size: 33px;
+  }
 }
 
-@mixin font-h0($weight) {
-  font-size: 35px;
-  font-weight: $weight;
-}
-
-
-
-@mixin fontSize1($weight) {
-  font-size: 10px;
-  font-weight: $weight;
-}
-
-@mixin fontSize2($weight) {
-  font-size: 12.5px;
-  font-weight: $weight;
-}
-
-@mixin fontSize3($weight) {
-  font-size: 15px;
-  font-weight: $weight;
-}
-
-@mixin fontSize4($weight) {
+@mixin fontH1 {
   font-size: 20px;
-  font-weight: $weight;
+  font-weight: $bold;
+
+  @include tablet-desktop {
+    font-size: 25px;
+  }
 }
 
-@mixin fontSize5($weight) {
-  font-size: 25px;
-  font-weight: $weight;
+@mixin fontH2 {
+  font-size: 17px;
+  font-weight: $bold;
+
+  @include tablet-desktop {
+    font-size: 20px;
+  }
 }
 
-@mixin fontSize6($weight) {
-  font-size: 30px;
-  font-weight: $weight;
+@mixin fontBody {
+  font-size: 13.5px;
+  font-family: TATSanaSuksa;
+  line-height: 1.6;
+
+  @include tablet-desktop {
+    font-size: 16.5px;
+  }
 }
 
-@mixin fontSize7($weight) {
-  font-size: 35px;
+@mixin fontCaption($weight) {
+  font-size: 12px;
   font-weight: $weight;
+
+  @include tablet-desktop {
+    font-size: 14px;
+  }
 }
 
 @mixin shadow1 {

@@ -1,24 +1,24 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="292.24" height="206.99" viewBox="0 0 292.24 206.99">
+<svg xmlns="http://www.w3.org/2000/svg" width="295.24" height="210" viewBox="0 0 295.24 210">
   <defs>
     <style>
       .a {
-        fill: #fea065;
+        fill: #febb6b;
       }
 
       .a, .b {
         stroke: #fff;
         stroke-miterlimit: 10;
-        stroke-width: 12px;
+        stroke-width: 15px;
       }
 
       .b {
-        fill: #fd7d56;
+        fill: #fa5458;
       }
     </style>
   </defs>
-  <title>Asset 76</title>
+  <title>Asset 90</title>
   <g>
-    <rect class="a" x="6" y="32.13" width="280.24" height="168.86" rx="11.24"/>
-    <path class="b" d="M236.06,15V50c0,5-5,9-11.24,9H67.43c-6.21,0-11.25-4-11.25-9V15c0-5,5-9,11.25-9H224.82C231,6,236.06,10,236.06,15Z"/>
+    <rect class="a" x="7.5" y="33.64" width="280.24" height="168.86" rx="26.5"/>
+    <rect class="b" x="57.5" y="7.5" width="180" height="53" rx="26.5"/>
   </g>
 </svg>

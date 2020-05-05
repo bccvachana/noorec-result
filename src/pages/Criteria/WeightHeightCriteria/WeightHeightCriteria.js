@@ -4,12 +4,12 @@ import "../../../assets/WeightHeight/WeightHeightSwiper.scss";
 import Swiper from "react-id-swiper";
 import ValueInfo from "../../../components/UI/ValueInfo/ValueInfo";
 
-import ResultCriteria from "../../../templates/Result/ResultCriteria";
+import ResultCriteria from "../../../components/Result/ResultCriteria";
 import weightHeightStatic from "../../../assets/WeightHeight/WeightHeightStatic";
 
 const WeightHeightCriteria = (props) => {
   const { index, pageIndex, isFromTop, data } = props;
-  const criteria = "underWeight";
+  const criteria = "extremeObase";
   const { title, detail, bar, marginLeft } = weightHeightStatic[criteria];
 
   const [svgWidthRef, setSvgWidthRef] = useState(0);

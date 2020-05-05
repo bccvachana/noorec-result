@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import classes from "./ResultTemplate.module.scss";
+import classes from "./Result.module.scss";
 
 import Chart from "../../components/Chart/Chart";
 import BpChart from "../../components/Chart/BpChart";
