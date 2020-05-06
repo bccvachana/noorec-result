@@ -1,9 +1,8 @@
 @import "../../../var";
 
 .BloodPressureContainer {
-  flex-grow: 1;
+  flex-grow: 0.85;
   width: 90%;
-  max-height: 220px;
   position: relative;
 
   .Svg1Container {
@@ -48,14 +47,10 @@
 .ValueContainer {
   width: 100%;
   @include flex(row);
-  margin-top: 10px;
+  margin-top: 12px;
 
   .RowSpace {
     flex-grow: 1;
     max-width: 30px;
-
-    @include tablet-desktop {
-      max-width: 25px;
-    }
   }
 }
