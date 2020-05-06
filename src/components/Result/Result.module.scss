@@ -2,6 +2,7 @@
 
 .Title {
   width: 100%;
+  min-width: 280px;
   max-width: 640px;
   margin-bottom: 15px;
   @include flex(row);
@@ -14,8 +15,9 @@
 
 .Container {
   width: 100%;
+  min-width: 280px;
   max-width: 640px;
-  max-height: 550px;
+  max-height: 518px;
   padding: 15px;
   position: relative;
   background-color: $color-primary;
@@ -25,6 +27,7 @@
   @include shadow1;
 
   @include tablet-desktop {
+    max-height: 540px;
     padding: 25px 0;
   }
 }
@@ -61,7 +64,7 @@
 }
 
 .Criteria {
-  margin-top: 20px;
+  margin-top: 30px;
   background-color: $color-accent2;
   color: white;
   padding: 1px 10px;

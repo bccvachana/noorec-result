@@ -18,7 +18,7 @@ const BloodPressureChartInfo = (props) => {
           data={data[0].data[0]}
           valueIndex={valueIndex}
         />
-        <div className={classes.RowSpace}></div>
+        <div className={classes.RowSpace} style={{ maxWidth: "30px" }}></div>
         <ValueInfo
           type="diastolic"
           data={data[0].data[1]}

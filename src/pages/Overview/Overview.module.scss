@@ -10,7 +10,8 @@ $tabletMargin: 17px;
 }
 
 .ProfileTitle {
-  width: 95%;
+  width: 100%;
+  min-width: 280px;
   max-width: 480px;
   height: 2.6em;
   margin-bottom: $mobileMargin;
@@ -55,7 +56,8 @@ $tabletMargin: 17px;
 }
 
 .Row {
-  width: 95%;
+  width: 100%;
+  min-width: 280px;
   max-width: 480px;
   margin-bottom: $mobileMargin;
   @include flex(row);
